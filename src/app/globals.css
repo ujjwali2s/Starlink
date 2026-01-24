@@ -1,26 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Color Scheme Variables - Easy to change */
+:root {
+  /* Current Cyan/Teal Theme (Original) */
+  /* --color-primary: 0 217 255;        Cyan #00d9ff */
+  /* --color-primary-light: 0 255 204;  Teal #00ffcc */
+
+  /* Corporate Blue/Gold Theme - ACTIVE */
+  --color-primary: 20 56 132;
+  /* Dark Blue #143884 */
+  --color-primary-light: 218 165 32;
+  /* Gold #daa520 */
+
+  /* Alternative Professional Navy/Silver Theme (Uncomment to use) */
+  /* --color-primary: 25 42 86;          Navy #192a56 */
+  /* --color-primary-light: 138 154 182;  Silver-Blue #8a9ab6 */
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors - Dark Theme with Vibrant Accents */
+  --primary: #00d9ff;
+  --primary-light: #00ffcc;
+  --primary-dark: #0099cc;
+  --secondary: #ff6b9d;
+  --accent: #ffd700;
+
+  --bg-primary: #0a0e27;
+  --bg-secondary: #15194a;
+  --bg-tertiary: #1e2463;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: linear-gradient(135deg, #0a0e27 0%, #15194a 50%, #1e2463 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00d9ff 0%, #00ffcc 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00ffcc 0%, #00d9ff 100%);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.text-gradient {
+  background: linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }

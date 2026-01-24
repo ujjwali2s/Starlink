@@ -1,65 +1,376 @@
-import Image from "next/image";
+import Link from 'next/link';
+import { ArrowRight, Sparkles, Users, Target, Lightbulb, TrendingUp, Phone } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen">
+
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
+          <div className="animate-fade-in-up">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 text-gradient">
+              Delivering World-Class Solutions
+            </h1>
+            <p className="text-base md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+              The leading Systems Integrator providing end-to-end solutions in Qatar. Empowering businesses with innovative technology, strategic expertise, and exceptional service.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/about" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400 text-gray-900 font-semibold text-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1 inline-flex items-center justify-center gap-2">
+                Explore Our Story
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link href="/contact" className="px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/10 transition-all transform hover:-translate-y-1 inline-flex items-center justify-center gap-2">
+                Get in Touch
+                <Phone className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Business Solutions Section */}
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4">
+              Our Solutions
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              Empowering Your Business
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">
+              Comprehensive technology solutions designed to elevate your workforce and enhance customer experiences
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* HRO Card */}
+            <div className="glass rounded-2xl p-8 hover:transform hover:-translate-y-3 transition-all duration-300 border border-transparent hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/20 group">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Users className="w-8 h-8 text-gray-900" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gradient">Human Resource Outsourcing</h3>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                Maximize your team's potential with our adaptable HRO services, designed to meet evolving business needs. From staffing to strategic HR support, we provide the flexibility to help your workforce thrive.
+              </p>
+              <Link href="/solutions/bpo" className="text-cyan-400 font-semibold inline-flex items-center gap-2 hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Consumer Tech Card */}
+            <div className="glass rounded-2xl p-8 hover:transform hover:-translate-y-3 transition-all duration-300 border border-transparent hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/20 group">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gradient">Consumer Technology</h3>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                At the forefront of mobile innovation, we take pride in delivering cutting-edge smartphone technology that shapes the future. Empower your lifestyle with devices designed for performance and connectivity.
+              </p>
+              <Link href="/solutions/consumer-tech" className="text-cyan-400 font-semibold inline-flex items-center gap-2 hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Contact Center Card */}
+            <div className="glass rounded-2xl p-8 hover:transform hover:-translate-y-3 transition-all duration-300 border border-transparent hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/20 group">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-teal-500 to-green-400 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Phone className="w-8 h-8 text-gray-900" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gradient">Contact Center Outsourcing</h3>
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-6">
+                Enhance customer satisfaction with our tailored contact center solutions designed to provide seamless, personalized support. Let us handle your customer interactions while you focus on business growth.
+              </p>
+              <Link href="/solutions/bpo" className="text-cyan-400 font-semibold inline-flex items-center gap-2 hover:gap-4 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CEO Message Section */}
+      <section className="py-24 relative">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="glass rounded-3xl p-12 md:p-16 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-400/5 rounded-full blur-3xl"></div>
+
+            <div className="relative z-10">
+              <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4 md:mb-6">
+                Leadership Message
+              </span>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 md:mb-8">Trusted Business Partner</h2>
+              <p className="text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed mb-6 md:mb-8">
+                With over 24 years of experience in the telecom and ICT sectors, Cyril brings a proven track record in strategic leadership and digital transformation. His expertise will guide us into our next phase of growth, enhancing both our innovative solutions and customer experiences. We look forward to strengthening our market position under his leadership.
+              </p>
+              <div className="flex items-center gap-6">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center text-4xl font-bold text-gray-900">
+                  CA
+                </div>
+                <div>
+                  <h4 className="text-xl md:text-2xl font-bold text-gradient">Cyril Anand</h4>
+                  <p className="text-gray-400 uppercase tracking-wider text-xs md:text-sm">Chief Executive Officer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Advantages Section */}
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4">
+              Why Choose Us
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              Our Advantages
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="glass rounded-xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-300 hover:border-cyan-500/50 border border-transparent">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-teal-400 flex items-center justify-center mx-auto mb-4">
+                <Lightbulb className="w-8 h-8 text-gray-900" />
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3">Integrated Innovation</h3>
+              <p className="text-sm md:text-base text-gray-400">Seamlessly blending technology and strategy to drive transformative business solutions.</p>
+            </div>
+
+            <div className="glass rounded-xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-300 hover:border-cyan-500/50 border border-transparent">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Collaborative Culture</h3>
+              <p className="text-gray-400">Fostering innovation and excellence through teamwork and shared vision.</p>
+            </div>
+
+            <div className="glass rounded-xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-300 hover:border-cyan-500/50 border border-transparent">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-teal-500 to-green-400 flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Professional Team</h3>
+              <p className="text-gray-400">Delivering expertise and excellence in every project we undertake.</p>
+            </div>
+
+            <div className="glass rounded-xl p-8 text-center hover:transform hover:-translate-y-2 transition-all duration-300 hover:border-cyan-500/50 border border-transparent">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Always Researching</h3>
+              <p className="text-gray-400">Constantly exploring the latest advancements to drive your business forward.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Preview */}
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4">
+              Meet Our Team
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              Our Experts
+            </h2>
+            <p className="text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">
+              Led by industry veterans with decades of combined experience
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: 'Thomas Andrew Davidson', position: 'Vice President, BPO', initials: 'TD', color: 'from-cyan-500 to-blue-500' },
+              { name: 'Rajesh Bansal', position: 'Vice President, Finance', initials: 'RB', color: 'from-purple-500 to-pink-500' },
+              { name: 'Taiyab Ghafoor', position: 'VP of Consumer Technology', initials: 'TG', color: 'from-teal-500 to-green-500' },
+              { name: 'Benish Peter Jacob', position: 'Vice President, ICT', initials: 'BJ', color: 'from-orange-500 to-red-500' }
+            ].map((leader, index) => (
+              <div key={index} className="glass rounded-xl overflow-hidden hover:transform hover:-translate-y-3 transition-all duration-300 cursor-pointer hover:border-cyan-500/50 border border-transparent group">
+                <div className={`h-48 bg-gradient-to-br ${leader.color} flex items-center justify-center text-6xl font-bold text-white`}>
+                  {leader.initials}
+                </div>
+                <div className="p-6">
+                  <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 group-hover:text-gradient transition-all">{leader.name}</h3>
+                  <p className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">{leader.position}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/leadership" className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass text-white font-semibold text-lg hover:bg-white/10 transition-all transform hover:-translate-y-1">
+              View All Leaders
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications & Partnerships */}
+      <section className="py-24 bg-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4">
+              Trusted & Certified
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              Industry Certifications
+            </h2>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto">
+              Committed to excellence through international standards and strategic partnerships
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="glass rounded-xl p-8 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                <div className="text-2xl font-bold text-white">ISO</div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">ISO 9001:2015</h3>
+              <p className="text-sm md:text-base text-gray-400">Quality Management System</p>
+            </div>
+
+            <div className="glass rounded-xl p-8 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                <div className="text-2xl font-bold text-white">ISO</div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">ISO 27001:2013</h3>
+              <p className="text-sm md:text-base text-gray-400">Information Security</p>
+            </div>
+
+            <div className="glass rounded-xl p-8 text-center">
+              <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                <div className="text-2xl font-bold text-white">QR</div>
+              </div>
+              <h3 className="text-lg md:text-xl font-bold mb-2">Qatar Registry</h3>
+              <p className="text-sm md:text-base text-gray-400">Authorized Service Provider</p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <p className="text-sm md:text-base text-gray-400 mb-4">Proud Partner of</p>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <div className="glass px-8 py-4 rounded-xl">
+                <p className="text-xl md:text-2xl font-bold text-gradient">Ooredoo Group</p>
+              </div>
+              <div className="glass px-8 py-4 rounded-xl">
+                <p className="text-lg md:text-xl font-semibold text-gray-300">Qatar Chamber</p>
+              </div>
+              <div className="glass px-8 py-4 rounded-xl">
+                <p className="text-lg md:text-xl font-semibold text-gray-300">QICCA Member</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
+      <section className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 rounded-full glass border border-cyan-500/30 text-cyan-400 text-xs md:text-sm font-semibold uppercase tracking-wider mb-4">
+              Client Success Stories
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+              What Our Clients Say
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass rounded-2xl p-8">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-cyan-400 text-xl">★</span>
+                ))}
+              </div>
+              <p className="text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
+                "Starlink World has been instrumental in transforming our HR operations. Their BPO solutions have significantly improved our efficiency and allowed us to focus on core business activities."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold">
+                  M
+                </div>
+                <div>
+                  <p className="font-semibold">Mohammed Al-Rashid</p>
+                  <p className="text-sm text-gray-400">HR Director, Manufacturing Sector</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass rounded-2xl p-8">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-cyan-400 text-xl">★</span>
+                ))}
+              </div>
+              <p className="text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
+                "The ICT infrastructure solutions provided by Starlink World exceeded our expectations. Their team's professionalism and technical expertise is outstanding."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold">
+                  F
+                </div>
+                <div>
+                  <p className="font-semibold">Fatima Al-Kuwari</p>
+                  <p className="text-sm text-gray-400">CTO, Financial Services</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="glass rounded-2xl p-8">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-cyan-400 text-xl">★</span>
+                ))}
+              </div>
+              <p className="text-sm md:text-base text-gray-300 mb-6 leading-relaxed">
+                "We've partnered with Starlink World for over 5 years. Their contact center solutions have consistently delivered exceptional customer satisfaction rates for our business."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center text-white font-bold">
+                  K
+                </div>
+                <div>
+                  <p className="font-semibold">Khalid Al-Thani</p>
+                  <p className="text-sm text-gray-400">Operations Manager, Retail</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+
+      <section className="py-24 relative">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="glass rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-teal-400/10"></div>
+            <div className="relative z-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 md:mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-base md:text-lg lg:text-xl text-gray-300 mb-6 md:mb-8">
+                Let's discuss how our innovative solutions can help you achieve your goals
+              </p>
+              <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-teal-400 text-gray-900 font-semibold text-lg hover:shadow-2xl hover:shadow-cyan-500/50 transition-all transform hover:-translate-y-1">
+                Contact Us Today
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
