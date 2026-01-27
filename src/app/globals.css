@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
@@ -10,11 +10,11 @@
   /* --color-primary: 0 217 255;        Cyan #00d9ff */
   /* --color-primary-light: 0 255 204;  Teal #00ffcc */
 
-  /* Corporate Blue/Gold Theme - ACTIVE */
-  --color-primary: 20 56 132;
-  /* Dark Blue #143884 */
-  --color-primary-light: 218 165 32;
-  /* Gold #daa520 */
+  /* Corporate Orange/Navy Theme - ACTIVE */
+  --color-primary: 255 107 53;
+  /* Vibrant Orange #FF6B35 */
+  --color-primary-light: 255 133 82;
+  /* Light Orange #FF8552 */
 
   /* Alternative Professional Navy/Silver Theme (Uncomment to use) */
   /* --color-primary: 25 42 86;          Navy #192a56 */
@@ -22,16 +22,20 @@
 }
 
 :root {
-  /* Colors - Dark Theme with Vibrant Accents */
-  --primary: #00d9ff;
-  --primary-light: #00ffcc;
-  --primary-dark: #0099cc;
-  --secondary: #ff6b9d;
-  --accent: #ffd700;
+  /* Colors - Light Corporate Theme with Orange Accents */
+  --primary: #FF6B35;
+  --primary-light: #FF8552;
+  --primary-dark: #E85A2A;
+  --secondary: #1A237E;
+  --accent: #FFB84D;
 
-  --bg-primary: #0a0e27;
-  --bg-secondary: #15194a;
-  --bg-tertiary: #1e2463;
+  --bg-primary: #FFF5EB;
+  --bg-secondary: #FFE4D6;
+  --bg-tertiary: #FFFAF5;
+
+  --text-primary: #1A237E;
+  --text-secondary: #424F7B;
+  --text-light: #6B7399;
 }
 
 @theme inline {
@@ -40,10 +44,10 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0a0e27 0%, #15194a 50%, #1e2463 100%);
+  background: linear-gradient(135deg, #FFF5EB 0%, #FFE4D6 50%, #FFFAF5 100%);
   background-attachment: fixed;
-  color: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #1A237E;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
@@ -53,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Merriweather', serif;
 }
 
 /* Smooth scroll behavior */
@@ -71,24 +75,25 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00d9ff 0%, #00ffcc 100%);
+  background: linear-gradient(180deg, #FF6B35 0%, #FF8552 100%);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00ffcc 0%, #00d9ff 100%);
+  background: linear-gradient(180deg, #FF8552 0%, #FF6B35 100%);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 
 .text-gradient {
-  background: linear-gradient(135deg, #00d9ff 0%, #00ffcc 100%);
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8552 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
