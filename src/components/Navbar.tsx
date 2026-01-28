@@ -130,7 +130,7 @@ export default function Navbar() {
                             transition={{ delay: 0.5 }}
                             className="p-8 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between"
                         >
-                            <span className="text-slate-500 text-sm font-medium">Switch Theme</span>
+
                             <div className="scale-125 origin-right">
                                 <ThemeToggle />
                             </div>
