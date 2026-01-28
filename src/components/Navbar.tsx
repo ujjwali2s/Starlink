@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
@@ -30,7 +30,7 @@ export default function Navbar() {
                     </span>
                 </Link>
 
-                {/* Desktop Menu */}
+
                 <nav className="hidden md:flex items-center gap-8">
                     <Link href="/" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
                         Home
@@ -89,19 +89,55 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <motion.div
-                initial={false}
-                animate={mobileMenuOpen ? { opacity: 1, pointerEvents: 'auto' } : { opacity: 0, pointerEvents: 'none' }}
-                className="fixed inset-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl z-40 md:hidden pt-24 px-6"
-            >
-                <div className="flex flex-col gap-6">
-                    <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-slate-900 dark:text-white">Home</Link>
-                    <Link href="/solutions" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-slate-900 dark:text-white">Solutions</Link>
-                    <Link href="/leadership" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-slate-900 dark:text-white">Leadership</Link>
-                    <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-slate-900 dark:text-white">About Us</Link>
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-semibold text-orange-600">Get In Touch</Link>
-                </div>
-            </motion.div>
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, x: '100%' }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: '100%' }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="fixed inset-0 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl z-40 md:hidden flex flex-col"
+                    >
+                        <div className="flex-1 flex flex-col justify-center px-8 gap-8">
+                            {[
+                                { name: "Home", href: "/" },
+                                { name: "Solutions", href: "/solutions" },
+                                { name: "Leadership", href: "/leadership" },
+                                { name: "About Us", href: "/about" },
+                                { name: "Contact", href: "/contact" }
+                            ].map((item, index) => (
+                                <motion.div
+                                    key={item.name}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 + index * 0.1 }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="text-3xl font-bold text-slate-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 transition-colors block"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Bottom Actions */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="p-8 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between"
+                        >
+                            <span className="text-slate-500 text-sm font-medium">Switch Theme</span>
+                            <div className="scale-125 origin-right">
+                                <ThemeToggle />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </motion.header>
     );
 }

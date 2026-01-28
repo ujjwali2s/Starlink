@@ -13,16 +13,6 @@ import WorkGallery from '@/components/WorkGallery';
 import OurBusiness from '@/components/OurBusiness';
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <main className="min-h-screen bg-slate-50 font-sans selection:bg-orange-200 selection:text-orange-900">
       <Hero />
