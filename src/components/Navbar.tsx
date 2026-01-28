@@ -15,6 +15,16 @@ export default function Navbar() {
         setScrolled(latest > 50);
     });
 
+    // Helper for visibility logic
+    // If menu is OPEN: Always High Contrast against the Menu Background
+    // If menu is CLOSED: depends on 'scrolled' state
+    const getNavTextColor = () => {
+        if (mobileMenuOpen) {
+            return 'text-slate-900 dark:text-white';
+        }
+        return scrolled ? 'text-slate-900 dark:text-white' : 'text-white';
+    };
+
     return (
         <motion.header
             initial={{ y: -100 }}
@@ -25,12 +35,12 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="relative z-50">
-                    <span className={`text-2xl font-bold tracking-tight ${scrolled ? 'text-slate-900 dark:text-white' : 'text-white'}`}>
+                    <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${getNavTextColor()}`}>
                         Starlink<span className="text-orange-500">World</span>
                     </span>
                 </Link>
 
-
+                {/* Desktop Menu */}
                 <nav className="hidden md:flex items-center gap-8">
                     <Link href="/" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
                         Home
@@ -77,13 +87,13 @@ export default function Navbar() {
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden relative z-50 p-2"
+                    className="md:hidden relative z-50 p-2 focus:outline-none"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 >
                     {mobileMenuOpen ? (
-                        <X className={`w-6 h-6 ${scrolled ? 'text-slate-900 dark:text-white' : 'text-white'}`} />
+                        <X className={`w-6 h-6 transition-colors duration-300 ${getNavTextColor()}`} />
                     ) : (
-                        <Menu className={`w-6 h-6 ${scrolled ? 'text-slate-900 dark:text-white' : 'text-white'}`} />
+                        <Menu className={`w-6 h-6 transition-colors duration-300 ${getNavTextColor()}`} />
                     )}
                 </button>
             </div>
@@ -96,8 +106,13 @@ export default function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 bg-white/95 dark:bg-slate-950/95 backdrop-blur-2xl z-40 md:hidden flex flex-col"
+                        className="fixed inset-0 bg-white dark:bg-slate-900 z-40 md:hidden flex flex-col h-screen overflow-hidden"
                     >
+                        {/* 
+                           removed backdrop-blur and /95 opacity 
+                           using SOLID colors (bg-white, bg-slate-900) 
+                           to fix 'transparency' issues 
+                        */}
                         <div className="flex-1 flex flex-col justify-center px-8 gap-8">
                             {[
                                 { name: "Home", href: "/" },
@@ -115,7 +130,7 @@ export default function Navbar() {
                                     <Link
                                         href={item.href}
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className="text-3xl font-bold text-slate-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 transition-colors block"
+                                        className="text-4xl font-black tracking-tight text-slate-900 dark:text-white hover:text-orange-500 dark:hover:text-orange-400 transition-colors block"
                                     >
                                         {item.name}
                                     </Link>
@@ -128,9 +143,9 @@ export default function Navbar() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="p-8 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between"
+                            className="p-8 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between pb-10"
                         >
-
+                            <span className="text-slate-500 font-medium">Appearance</span>
                             <div className="scale-125 origin-right">
                                 <ThemeToggle />
                             </div>
