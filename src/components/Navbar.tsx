@@ -51,25 +51,25 @@ export default function Navbar() {
                         </button>
                         <div className="absolute top-full left-0 w-64 pt-4 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
                             <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-2 border border-slate-100 dark:border-slate-700 overflow-hidden">
-                                <Link href="/solutions/hro" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
+                                <Link href="/" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
                                     <div className="font-semibold text-slate-800 dark:text-white">HR Outsourcing</div>
                                     <div className="text-xs text-slate-500 dark:text-slate-400">Maximize workforce potential</div>
                                 </Link>
-                                <Link href="/solutions/consumer-tech" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
+                                <Link href="/" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
                                     <div className="font-semibold text-slate-800 dark:text-white">Consumer Tech</div>
                                     <div className="text-xs text-slate-500 dark:text-slate-400">Leading smartphone innovation</div>
                                 </Link>
-                                <Link href="/solutions/bpo" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
+                                <Link href="/" className="block px-4 py-3 rounded-lg hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors">
                                     <div className="font-semibold text-slate-800 dark:text-white">Contact Center</div>
                                     <div className="text-xs text-slate-500 dark:text-slate-400">Elevate customer experience</div>
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <Link href="/leadership" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
+                    <Link href="/" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
                         Leadership
                     </Link>
-                    <Link href="/about" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
+                    <Link href="/" className={`text-sm font-medium hover:text-orange-500 transition-colors ${scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-200'}`}>
                         About Us
                     </Link>
                 </nav>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-4">
                     <ThemeToggle />
                     <Link
-                        href="/contact"
+                        href="/"
                         className="group px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium text-sm hover:bg-orange-500 transition-colors flex items-center gap-2"
                     >
                         Get In Touch
@@ -116,10 +116,10 @@ export default function Navbar() {
                         <div className="flex-1 flex flex-col justify-center px-8 gap-8">
                             {[
                                 { name: "Home", href: "/" },
-                                { name: "Solutions", href: "/solutions" },
-                                { name: "Leadership", href: "/leadership" },
-                                { name: "About Us", href: "/about" },
-                                { name: "Contact", href: "/contact" }
+                                { name: "Solutions", href: "/" },
+                                { name: "Leadership", href: "/" },
+                                { name: "About Us", href: "/" },
+                                { name: "Contact", href: "/" }
                             ].map((item, index) => (
                                 <motion.div
                                     key={item.name}

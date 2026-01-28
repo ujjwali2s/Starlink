@@ -18,11 +18,11 @@ export default function Footer() {
                     {/* Quick Links - Compact */}
                     <div className="grid grid-cols-2 gap-x-4 gap-y-2 pb-6 border-b border-slate-200 dark:border-white/10">
                         <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Home</Link>
-                        <Link href="/about" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">About Us</Link>
-                        <Link href="/leadership" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Leadership</Link>
-                        <Link href="/careers" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Careers</Link>
-                        <Link href="/solutions" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Solutions</Link>
-                        <Link href="/newsroom" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Newsroom</Link>
+                        <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">About Us</Link>
+                        <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Leadership</Link>
+                        <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Careers</Link>
+                        <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Solutions</Link>
+                        <Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors text-sm py-1">Newsroom</Link>
                     </div>
 
                     {/* Contact Info - Compact with Icons */}
@@ -55,19 +55,19 @@ export default function Footer() {
                         <h4 className="font-bold mb-4 text-lg text-slate-900 dark:text-white">Quick Links</h4>
                         <ul className="space-y-2">
                             <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Home</Link></li>
-                            <li><Link href="/about" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">About Us</Link></li>
-                            <li><Link href="/leadership" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Leadership</Link></li>
-                            <li><Link href="/careers" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Careers</Link></li>
-                            <li><Link href="/newsroom" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Newsroom</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">About Us</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Leadership</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Careers</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Newsroom</Link></li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="font-bold mb-4 text-lg text-slate-900 dark:text-white">Solutions</h4>
                         <ul className="space-y-2">
-                            <li><Link href="/solutions" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Consumer Tech</Link></li>
-                            <li><Link href="/solutions" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">ICT</Link></li>
-                            <li><Link href="/solutions" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">BPO</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">Consumer Tech</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">ICT</Link></li>
+                            <li><Link href="/" className="text-slate-500 dark:text-gray-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors">BPO</Link></li>
                         </ul>
                     </div>
 
